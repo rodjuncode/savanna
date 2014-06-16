@@ -10,5 +10,5 @@ public class MinusXSquaredFactory implements DnaFactory {
 		newDna.setX(Math.random() * 2 - 1);
 		return newDna;
 	}
-	
+
 }

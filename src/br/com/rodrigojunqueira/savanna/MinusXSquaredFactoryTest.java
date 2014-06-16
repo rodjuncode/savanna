@@ -14,4 +14,5 @@ public class MinusXSquaredFactoryTest {
 		assertTrue((-1 < mxs.getX()) && (mxs.getX() < 1));
 	}
 
+
 }
