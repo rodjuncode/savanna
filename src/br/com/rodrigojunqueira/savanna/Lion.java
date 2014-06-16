@@ -33,6 +33,10 @@ public class Lion implements Comparable<Lion> {
 		Lion cub = new Lion(cubDna);
 		return cub;
 	}
+	
+	public void mutate() {
+		this.dna.mutate();
+	}
 
 	/**
 	 * This method guarantees the implementation of the Comparable<Lion> interface.

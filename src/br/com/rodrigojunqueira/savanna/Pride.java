@@ -20,7 +20,7 @@ public class Pride {
 	 * A new Pride is on its 1st generation.
 	 */
 	public Pride(DnaFactory dnaFactory) {
-		this.generation = 1;
+		this.generation = 0;
 		this.dnaFactory = dnaFactory;
 	}
 	
@@ -40,16 +40,21 @@ public class Pride {
 	 * @param n The number of Lions for this Pride.
 	 */
 	public void populate(int n) {
+		this.generation = 1;
 		this.lions = new Lion[n];
 		for (int i = 0; i < n; i++) {
 			this.lions[i] = new Lion(this.dnaFactory.generate());
 		}
+		this.rank();
 	}
 
 	/**
 	 * The Pride evolves into its next generation.
 	 */
 	public void nextGeneration() {
+		this.mate();
+		this.mutate();
+		this.rank();
 		this.generation++;		
 	}
 
@@ -78,6 +83,22 @@ public class Pride {
 			}
 		}
 		
+	}
+
+	public void mate() {
+		for (int i = 0; i < this.lions.length; i++) {
+			if (this.lions[i] != this.lionKing) {
+				this.lions[i] = this.lionKing.mate(this.lions[i]);
+			}
+		}
+	}
+	
+	public void mutate() {
+		for (int i = 0; i < this.lions.length; i++) {
+			if (this.lions[i] != this.lionKing) {
+				this.lions[i].mutate();
+			}
+		}		
 	}
 	
 }
