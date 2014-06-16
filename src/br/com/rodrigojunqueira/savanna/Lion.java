@@ -29,13 +29,15 @@ public class Lion implements Comparable<Lion> {
 	 */
 	public Lion mate(Lion female) {
 		Lion male = this;
-		Dna cubDna = male.dna.crossover(female.dna);	
+		Dna cubDna = male.dna.crossover(female.dna);
+		cubDna.evaluate();
 		Lion cub = new Lion(cubDna);
 		return cub;
 	}
 	
 	public void mutate() {
 		this.dna.mutate();
+		this.dna.evaluate();
 	}
 
 	/**
@@ -51,8 +53,11 @@ public class Lion implements Comparable<Lion> {
 		if (this.dna.asFitAs(defiant.dna)) return 0;
 		return 0; // Make sure it returns something
 	}
-	
-	
+
+	public boolean isGoodEnough() {
+		return this.dna.isGoodEnough();
+	}
+		
 	
 
 }

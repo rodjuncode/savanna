@@ -55,7 +55,7 @@ public class Pride {
 		this.mate();
 		this.mutate();
 		this.rank();
-		this.generation++;		
+		this.generation++;
 	}
 
 	public Lion[] getLions() {

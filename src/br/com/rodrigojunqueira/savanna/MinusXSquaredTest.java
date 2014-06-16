@@ -40,12 +40,33 @@ public class MinusXSquaredTest {
 		assertEquals(-0.25, mxs3.getY(), EPSILON);
 	}
 	
+	//@Test
 	public void mutate() {
 		MinusXSquared mxs = new MinusXSquared();
 		mxs.setX(0.55);
 		mxs.mutate();
 		mxs.evaluate();
 		assertEquals(-0.25, mxs.getY(), EPSILON);
+	}
+	
+	/*
+	@Test
+	public void isDnaEvaluated() {
+		MinusXSquared mxs = new MinusXSquared();
+		mxs.setX(0);
+		assertEquals(false, mxs.evaluated());
+		mxs.evaluate();
+		assertEquals(true, mxs.evaluated());
+	}
+	*/
+	
+	@Test
+	public void checkingForTermination() {
+		MinusXSquared mxs = new MinusXSquared();
+		MinusXSquared.setGoal(-0.005);
+		mxs.setX(0);
+		mxs.evaluate();
+		assertEquals(true, mxs.isGoodEnough());
 	}
 	
 	

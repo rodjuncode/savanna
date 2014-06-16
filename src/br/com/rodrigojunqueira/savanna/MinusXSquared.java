@@ -11,7 +11,8 @@ public class MinusXSquared implements Dna {
 
 	private double x;
 	private double y;
-
+	private static double goal;
+	
 	public MinusXSquared() {
 		this.x = 0;
 		this.y = 0;
@@ -28,6 +29,10 @@ public class MinusXSquared implements Dna {
 	public double getY() {
 		return this.y;
 	}		
+	
+	public static void setGoal(double newGoal) {
+		MinusXSquared.goal = newGoal;		
+	}	
 	
 	/**
 	 * y = -x^2
@@ -82,6 +87,12 @@ public class MinusXSquared implements Dna {
 			return true;
 		} 
 		return false;
+	}
+
+	public boolean isGoodEnough() {
+		if (this.getY() > MinusXSquared.goal) {
+			return true;
+		} else return false;
 	}
 
 

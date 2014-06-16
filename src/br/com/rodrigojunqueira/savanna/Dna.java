@@ -16,8 +16,6 @@ package br.com.rodrigojunqueira.savanna;
  */
 public interface Dna {
 		
-	public void evaluate();	
-	
 	/**
 	 * Basic Genetic Algorithm operation: crossover. Two solutions combine themselves in order to produce a new solution. 
 	 * @param dna	the Dna to combine with
@@ -52,5 +50,8 @@ public interface Dna {
 	 */	
 	public boolean asFitAs(Dna defiant);	
 
+	public void evaluate();	
+	
+	public boolean isGoodEnough();
 	
 }

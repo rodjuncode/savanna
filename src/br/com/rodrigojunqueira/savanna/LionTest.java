@@ -15,4 +15,15 @@ public class LionTest {
 		assertTrue(cub instanceof Lion);
 	}
 
+	@Test
+	public void isGoodEnough() {
+		MinusXSquared mxs = new MinusXSquared();
+		mxs.setX(0);
+		MinusXSquared.setGoal(-0.005);
+		Lion lion = new Lion(mxs);
+		assertEquals(true, lion.isGoodEnough());
+	}
+	
 }
+
+

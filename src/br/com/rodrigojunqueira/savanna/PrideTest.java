@@ -65,6 +65,6 @@ public class PrideTest {
 		assertEquals("When looking for the king after mutating", king, pride.getKing());
 		assertEquals("When looking for the nomad after mutating", nomad, pride.getNomad());
 	}	
-
+	
 	
 }
