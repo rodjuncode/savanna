@@ -18,6 +18,7 @@ public class Lion implements Comparable<Lion> {
 	 */
 	public Lion(Dna dna) {
 		this.dna = dna; // The only way to set the Dna is through the constructor. 
+		this.dna.evaluate();
 	}
 	
 	public Lion() {	} // if no Dna is supplied, generates a Lion without a Dna. This should be fixed. If no Dna is provided, than it should create a new Dna.
@@ -30,7 +31,7 @@ public class Lion implements Comparable<Lion> {
 	public Lion mate(Lion female) {
 		Lion male = this;
 		Dna cubDna = male.dna.crossover(female.dna);
-		cubDna.evaluate();
+//		cubDna.evaluate();
 		Lion cub = new Lion(cubDna);
 		return cub;
 	}
