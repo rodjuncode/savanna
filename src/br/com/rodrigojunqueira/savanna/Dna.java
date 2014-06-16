@@ -5,11 +5,12 @@ package br.com.rodrigojunqueira.savanna;
  * @author Rodrigo Junqueira
  * Each Dna is the bottom abstraction layer of a solution for the problem we want to solve.
  * Interfacing this layer allows easily extension for different scenarios.
- * The Dna class needs to take care of 4 aspects of the problem:
+ * The Dna class needs to take care of 5 aspects of the problem:
  * 1) It needs to map the problem's possible solutions into parameters;
  * 2) It needs to be able to, given a set of values for those parameters, calculate a final result;
  * 3) It needs to be able to compare to given possible solutions and tell which one is best or if they are equal;
- * 4) It needs to implement the two basic Genetic Algorithm operations: mutation and crossover. 
+ * 4) It needs to implement the two basic Genetic Algorithm operations: mutation and crossover;
+ * 5) It needs to be able to answer if its solution is good enough.
  * Each Dna for a given problem may handle its basic operations in different ways. One a specific case, we may want to execute the mutation on a specific manner, for example. Hence, a Dna should implement how it performs the basic Genetic Algorithms operations, such as mutation and crossover.
  * It's important to notice that Dna doesn't have "social" skills. It's focused only in the solution, leaving all the rest for the upper abstraction layers.
  * 

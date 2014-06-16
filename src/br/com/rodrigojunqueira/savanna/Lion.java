@@ -7,7 +7,6 @@ package br.com.rodrigojunqueira.savanna;
  * The Lion class knows nothing about the solution details of the problem.
  * The Lion class also need to implement the Comparable interface, so the sort method can be used to a Collection of Lions (used in the upper layers).
  */
-
 public class Lion implements Comparable<Lion> {
 	
 	private Dna dna;
