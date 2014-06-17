@@ -6,44 +6,53 @@ import br.com.rodrigojunqueira.savanna.core.Dna;
 
 public class TravellingSalesman implements Dna {
 
-	private static HashMap<String, HashMap<String, Integer>> map;
+	private HashMap<String, HashMap<String, Integer>> map;
 	private String[] route;
 	private int totalDistance;
+	private static int goal;
 	
 	public TravellingSalesman(HashMap<String, HashMap<String, Integer>> newMap) {
 		this.map = newMap;
 	}
-
-	@Override
+	
 	public void mutate() {
-		// TODO Auto-generated method stub
+		this.setRoute(new String[]{
+									this.route[0], 
+									this.route[3], 
+									this.route[2], 
+									this.route[1], 
+									this.route[4]
+									});
 	}
 	
-	@Override
 	public Dna crossover(Dna dna) {
-		// TODO Auto-generated method stub
-		return null;
+		TravellingSalesman travel = (TravellingSalesman) dna;
+		TravellingSalesman newTravel = new TravellingSalesman(this.map);
+		newTravel.setRoute(travel.route);
+		return newTravel;
 	}	
 
-	@Override
 	public boolean moreFitThan(Dna defiant) {
-		// TODO Auto-generated method stub
-		return false;
+		TravellingSalesman d = (TravellingSalesman) defiant;
+		if (this.getTotalDistance() < d.getTotalDistance()) {
+			return true;
+		} else return false;
 	}
 
-	@Override
 	public boolean lessFitThan(Dna defiant) {
-		// TODO Auto-generated method stub
-		return false;
+		TravellingSalesman d = (TravellingSalesman) defiant;
+		if (this.getTotalDistance() > d.getTotalDistance()) {
+			return true;
+		} else return false;
 	}
 
-	@Override
 	public boolean asFitAs(Dna defiant) {
-		// TODO Auto-generated method stub
-		return false;
+		TravellingSalesman d = (TravellingSalesman) defiant;
+		if (this.getTotalDistance() == d.getTotalDistance()) {
+			return true;
+		} else return false;
 	}	
 
-	@Override
 	public void evaluate() {
 		int totalDistance = 0;
 		for (int i = 0; i < (this.route.length - 1); i++) {
@@ -52,10 +61,10 @@ public class TravellingSalesman implements Dna {
 		this.totalDistance = totalDistance;		
 	}
 
-	@Override
 	public boolean isGoodEnough() {
-		// TODO Auto-generated method stub
-		return false;
+		if (this.getTotalDistance() <= TravellingSalesman.goal) {
+			return true;
+		} else return false;
 	}
 
 	public void setRoute(String[] newRoute) {
@@ -70,6 +79,10 @@ public class TravellingSalesman implements Dna {
 
 	public int getTotalDistance() {
 		return this.totalDistance;
+	}
+
+	public static void setGoal(int newGoal) {
+		TravellingSalesman.goal = newGoal;
 	}
 
 }
