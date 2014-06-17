@@ -6,11 +6,9 @@ import java.util.HashMap;
 
 import org.junit.Test;
 
-import br.com.rodrigojunqueira.savanna.MinusXSquared.MinusXSquared;
-
 public class TravellingSalesmanTest {
 
-	private HashMap<String, HashMap<String, Integer>> map() {
+	public static HashMap<String, HashMap<String, Integer>> map() {
 
 		HashMap<String, HashMap<String, Integer>> testMap = new HashMap<String, HashMap<String, Integer>>();
 		
