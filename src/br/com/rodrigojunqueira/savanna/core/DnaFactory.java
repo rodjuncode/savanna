@@ -1,4 +1,4 @@
-package br.com.rodrigojunqueira.savanna;
+package br.com.rodrigojunqueira.savanna.core;
 
 /** 
  * 

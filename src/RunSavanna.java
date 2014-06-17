@@ -1,4 +1,6 @@
-package br.com.rodrigojunqueira.savanna;
+import br.com.rodrigojunqueira.savanna.MinusXSquared.MinusXSquared;
+import br.com.rodrigojunqueira.savanna.MinusXSquared.MinusXSquaredFactory;
+import br.com.rodrigojunqueira.savanna.core.*;
 
 public class RunSavanna {
 

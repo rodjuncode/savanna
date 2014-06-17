@@ -1,4 +1,6 @@
-package br.com.rodrigojunqueira.savanna;
+package br.com.rodrigojunqueira.savanna.MinusXSquared;
+
+import br.com.rodrigojunqueira.savanna.core.Dna;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package br.com.rodrigojunqueira.savanna;
+package br.com.rodrigojunqueira.savanna.TravellingSalesman;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import org.junit.Test;
 
-public class TravellingSalesManTest {
+public class TravellingSalesmanTest {
 
 	private HashMap<String, HashMap<String, Integer>> map() {
 
@@ -45,7 +45,7 @@ public class TravellingSalesManTest {
 	
 	@Test
 	public void evaluate() {
-		TravellingSalesMan travel = new TravellingSalesMan(this.map());
+		TravellingSalesman travel = new TravellingSalesman(this.map());
 		travel.setRoute(new String[]{"A", "D", "C", "B", "A"});
 		travel.evaluate();
 		assertEquals(10, travel.getTotalDistance());
@@ -53,17 +53,17 @@ public class TravellingSalesManTest {
 	
 	@Test
 	public void theDistanceBetweenTwoCities() {
-		TravellingSalesMan travel = new TravellingSalesMan(this.map());
+		TravellingSalesman travel = new TravellingSalesman(this.map());
 		assertEquals(3,travel.getDistance("A", "D"));
 	}
 	
 	@Test
 	public void crossover() {
-		TravellingSalesMan travel1 = new TravellingSalesMan(this.map());
+		TravellingSalesman travel1 = new TravellingSalesman(this.map());
 		travel1.setRoute(new String[]{"A", "D", "C", "B", "A"});
-		TravellingSalesMan travel2 = new TravellingSalesMan(this.map());
+		TravellingSalesman travel2 = new TravellingSalesman(this.map());
 		travel2.setRoute(new String[]{"A", "C", "B", "D", "A"});
-		TravellingSalesMan travel3 = (TravellingSalesMan) travel1.crossover(travel2);
+		TravellingSalesman travel3 = (TravellingSalesman) travel1.crossover(travel2);
 		travel3.evaluate();
 		assertEquals(20, travel3.getTotalDistance());		
 	}

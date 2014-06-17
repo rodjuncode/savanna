@@ -1,10 +1,12 @@
-package br.com.rodrigojunqueira.savanna;
+package br.com.rodrigojunqueira.savanna.core;
 
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
 
 import org.junit.Test;
+
+import br.com.rodrigojunqueira.savanna.MinusXSquared.MinusXSquaredFactory;
 
 public class PrideTest {
 

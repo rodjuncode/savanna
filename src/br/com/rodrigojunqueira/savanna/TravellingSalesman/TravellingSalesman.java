@@ -1,14 +1,16 @@
-package br.com.rodrigojunqueira.savanna;
+package br.com.rodrigojunqueira.savanna.TravellingSalesman;
 
 import java.util.HashMap;
 
-public class TravellingSalesMan implements Dna {
+import br.com.rodrigojunqueira.savanna.core.Dna;
+
+public class TravellingSalesman implements Dna {
 
 	private static HashMap<String, HashMap<String, Integer>> map;
 	private String[] route;
 	private int totalDistance;
 	
-	public TravellingSalesMan(HashMap<String, HashMap<String, Integer>> newMap) {
+	public TravellingSalesman(HashMap<String, HashMap<String, Integer>> newMap) {
 		this.map = newMap;
 	}
 
