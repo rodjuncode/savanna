@@ -67,20 +67,5 @@ public class TravellingSalesManTest {
 		travel3.evaluate();
 		assertEquals(20, travel3.getTotalDistance());		
 	}
-
-	a d c b a
-	a c b d a
-	a b c d a
-
-	
-    a b d c a
-    a d b c a
-    a c d b a
-
-    a b c d a
-    a d c b a
-    
-    a d c b a
-    
 	
 }

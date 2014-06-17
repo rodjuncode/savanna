@@ -11,22 +11,17 @@ public class TravellingSalesMan implements Dna {
 	public TravellingSalesMan(HashMap<String, HashMap<String, Integer>> newMap) {
 		this.map = newMap;
 	}
-	
-	@Override
-	public Dna crossover(Dna dna) {
-		String[] newRoute = new String[5];
-		newRoute[0] = "A";
-		newRoute[1] = this.route[3];
-		newRoute[2] = this.route[2];
-		// we are here
-		return null;
-	}
 
 	@Override
 	public void mutate() {
 		// TODO Auto-generated method stub
-		
 	}
+	
+	@Override
+	public Dna crossover(Dna dna) {
+		// TODO Auto-generated method stub
+		return null;
+	}	
 
 	@Override
 	public boolean moreFitThan(Dna defiant) {
@@ -44,7 +39,7 @@ public class TravellingSalesMan implements Dna {
 	public boolean asFitAs(Dna defiant) {
 		// TODO Auto-generated method stub
 		return false;
-	}
+	}	
 
 	@Override
 	public void evaluate() {
