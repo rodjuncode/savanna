@@ -3,20 +3,22 @@ package br.com.rodrigojunqueira.savanna.core;
 /**
  * 
  * @author Rodrigo Junqueira
- * A Lion is the abstraction layer that takes care of the social skills of a possible solution. 
+ * A Lion is the Savanna Genetic Algorithm Stack layer that takes care of the social skills for the possible solutions.
+ * Through this layer, the generated solutions are going to interact with each other, in order to generate better solutions. 
  * The Lion class knows nothing about the solution details of the problem.
- * The Lion class also need to implement the Comparable interface, so the sort method can be used to a Collection of Lions (used in the upper layers).
+ * The Lion class also needs to implement the Comparable<Lion> interface, so we may store its instances into Java Collections.
  */
 public class Lion implements Comparable<Lion> {
 	
 	private Dna dna;
 
 	/**
-	 * 
+	 * The only way to set the Dna of a Lion is through the class constructor.
+	 * We a new instance of Lion is created, it automatically evaluates its dna.
 	 * @param dna the Dna of the new created Lion 
 	 */
 	public Lion(Dna dna) {
-		this.dna = dna; // The only way to set the Dna is through the constructor. 
+		this.dna = dna;   
 		this.dna.evaluate();
 	}
 	
@@ -30,11 +32,13 @@ public class Lion implements Comparable<Lion> {
 	public Lion mate(Lion female) {
 		Lion male = this;
 		Dna cubDna = male.dna.crossover(female.dna);
-//		cubDna.evaluate();
 		Lion cub = new Lion(cubDna);
 		return cub;
 	}
 	
+	/**
+	 * An individual mutates itself, applying small changes in its parameters.
+	 */
 	public void mutate() {
 		this.dna.mutate();
 		this.dna.evaluate();
@@ -54,6 +58,10 @@ public class Lion implements Comparable<Lion> {
 		return 0; // Make sure it returns something
 	}
 
+	/**
+	 * A Lion should be able to tell if its Dna is a good enough solution for our goals.
+	 * @return
+	 */
 	public boolean isGoodEnough() {
 		return this.dna.isGoodEnough();
 	}
