@@ -1,7 +1,5 @@
 package br.com.rodrigojunqueira.savanna.TravellingSalesman;
 
-import java.util.Arrays;
-
 import br.com.rodrigojunqueira.savanna.core.Dna;
 import br.com.rodrigojunqueira.savanna.core.DnaFactory;
 

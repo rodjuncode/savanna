@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TravellingSalesmanTest {
 
-	public static HashMap<String, HashMap<String, Integer>> map() {
+	public HashMap<String, HashMap<String, Integer>> map() {
 
 		HashMap<String, HashMap<String, Integer>> testMap = new HashMap<String, HashMap<String, Integer>>();
 		
