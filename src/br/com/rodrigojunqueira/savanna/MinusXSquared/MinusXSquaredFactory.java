@@ -6,6 +6,7 @@ import br.com.rodrigojunqueira.savanna.core.DnaFactory;
 public class MinusXSquaredFactory implements DnaFactory {
 
 	/**
+	 * Generates a random value for x, for the function y = -x^2, with:
 	 * -1 < x < -1
 	 */
 	public Dna generate() {

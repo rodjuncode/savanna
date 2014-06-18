@@ -6,7 +6,7 @@ import br.com.rodrigojunqueira.savanna.core.Dna;
  * 
  * @author Rodrigo Junqueira
  * This class implements Dna to solve the problem of finding the maximum of the function y = x^2.
- * Although the problem is trivial, this class intends to play as mock for development and tests of the Genetic Algorithm.
+ * Although the problem is trivial, this class intends to play as a mock for development and tests of the Savanna Genetic Algorithm Stack.
  * 
  */
 public class MinusXSquared implements Dna {
@@ -83,6 +83,9 @@ public class MinusXSquared implements Dna {
 		return false;
 	}
 
+	/**
+	 * Detects if the solutions are the same
+	 */
 	public boolean asFitAs(Dna defiant) {
 		MinusXSquared d = (MinusXSquared) defiant;
 		if (this.getY() == d.getY()) {
@@ -91,6 +94,9 @@ public class MinusXSquared implements Dna {
 		return false;
 	}
 
+	/**
+	 * As we are trying to find the maximum of the function, a good enough solution needs to be higher than our goal
+	 */
 	public boolean isGoodEnough() {
 		if (this.getY() > MinusXSquared.goal) {
 			return true;
