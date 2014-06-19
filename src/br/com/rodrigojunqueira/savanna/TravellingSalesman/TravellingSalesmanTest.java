@@ -2,46 +2,21 @@ package br.com.rodrigojunqueira.savanna.TravellingSalesman;
 
 import static org.junit.Assert.*;
 
-import java.util.HashMap;
-
 import org.junit.Test;
 
 public class TravellingSalesmanTest {
-
-	public HashMap<String, HashMap<String, Integer>> map() {
-
-		HashMap<String, HashMap<String, Integer>> testMap = new HashMap<String, HashMap<String, Integer>>();
-		
-		HashMap<String, Integer> fromA = new HashMap<String, Integer>();
-		fromA.put("A", 0);
-		fromA.put("B", 2);
-		fromA.put("C", 1);
-		fromA.put("D", 3);
-		testMap.put("A", fromA);
-		
-		HashMap<String, Integer> fromB = new HashMap<String, Integer>();
-		fromB.put("A", 1);
-		fromB.put("B", 0);
-		fromB.put("C", 1);
-		fromB.put("D", 4);
-		testMap.put("B", fromB);
-		
-		HashMap<String, Integer> fromC = new HashMap<String, Integer>();
-		fromC.put("A", 10);
-		fromC.put("B", 2);
-		fromC.put("C", 0);
-		fromC.put("D", 1);
-		testMap.put("C", fromC);		
-		
-		HashMap<String, Integer> fromD = new HashMap<String, Integer>();
-		fromD.put("A", 5);
-		fromD.put("B", 1);
-		fromD.put("C", 4);
-		fromD.put("D", 0);
-		testMap.put("D", fromD);		
-		
-		return testMap;
-	}	
+	
+	private TravellingSalesmanMap map() {
+		TravellingSalesmanMap map = new TravellingSalesmanMap();
+		map.add("A");
+		map.add("B");
+		map.add("C");
+		map.add("D");
+		map.add("E");
+		map.add("F");	
+		map.add("G");
+		return map;
+	}
 	
 	@Test
 	public void evaluate() {
@@ -49,12 +24,6 @@ public class TravellingSalesmanTest {
 		travel.setRoute(new String[]{"A", "D", "C", "B", "A"});
 		travel.evaluate();
 		assertEquals(10, travel.getTotalDistance());
-	}
-	
-	@Test
-	public void theDistanceBetweenTwoCities() {
-		TravellingSalesman travel = new TravellingSalesman(this.map());
-		assertEquals(3,travel.getDistance("A", "D"));
 	}
 	
 	@Test
@@ -68,7 +37,7 @@ public class TravellingSalesmanTest {
 		assertEquals(12, travel3.getTotalDistance());		
 	}
 
-	@Test
+	//@Test
 	public void mutate() {
 		TravellingSalesman travel = new TravellingSalesman(this.map());
 		travel.setRoute(new String[]{"A", "D", "C", "B", "A"}); // 9
@@ -77,7 +46,7 @@ public class TravellingSalesmanTest {
 		assertEquals(9, travel.getTotalDistance());
 	}
 	
-	@Test
+	//@Test
 	public void comparingFitness() {
 		TravellingSalesman travel1 = new TravellingSalesman(this.map());
 		travel1.setRoute(new String[]{"A", "D", "C", "B", "A"}); // 9
@@ -98,6 +67,20 @@ public class TravellingSalesmanTest {
 		travel.evaluate();
 		assertEquals(true, travel.isGoodEnough());
 	}	
+	
+	@Test
+	public void checkRoute() {
+		TravellingSalesman travel = new TravellingSalesman(this.map());
+		travel.setRoute(new String[]{"A", "D", "C", "B", "F", "E", "G", "A"}); 	// Valid. Starts and ends at A, no repeated cities and all cities visited.
+		assertEquals("After valid route", true, travel.checkRoute());
+		travel.setRoute(new String[]{"A", "D", "C", "B"}); 						// Invalid. Ends at B.
+		assertEquals("After invalid route, ending on city B", false, travel.checkRoute());		
+		travel.setRoute(new String[]{"A", "D", "C", "B", "G", "E", "G", "A"});	// Invalid. Repeated cities.
+		assertEquals("After invalid route, with repeated cities", false, travel.checkRoute());	
+		travel.setRoute(new String[]{"A", "D", "C", "B", "A"}); 				// Invalid. Not all cities visited.
+		assertEquals("After invalid route, not all cities visited", false, travel.checkRoute());		
+	
+	}
 	 
 	
 }

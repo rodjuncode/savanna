@@ -49,7 +49,27 @@ Lion - A B E C G D F A -> 2 + 8 + 2 + 1 + 4 + 4 + 8 = 29 cost
 In this example, we would have this solution as a cub:
 Cub - A B F C G D E A -> 2 + 1 + 2 + 1 + 4 + 1 + 5 = 16
 
-(Todo 5) Yeah, this needs to be implemented
+(Todo 5) Yeah, this needs to be implemented. Also, (Todo 6) the operation
+described above needs to be encapsulated so we can reproduce it as
+many times as we need in a single crossover operation.
+
+
+
+[06/19/2014 - 11h13 - GMT -3]
+Alright, so I was never a huge fan of the way I was storing the maps.
+Today I came up with an idea: instead of emulating a matrix with
+a HashMap inside of a HashMap (my main goal here was to have the key->value
+pair capability) I could just have a "one-dimension" hash that would store
+the costs of each movement between cities (i.e. "AB" => 3, "BC"=> 3).
+This might be a pain to code, but will definitely be more efficient.
+Also, since the map is becoming a little creature by itself, I probably
+should turn it into a separate class. Then the checkMap method should be moved
+to there. So (Todo 2) now becomes creating the Map class, implementing the
+new method for keeping the info about the distances and allowing the
+call of checkMap map method (ok, Todo 2.1 and Todo 2.2). 
+
+[06/19/2014 - 17h46 - GMT -3]
+(Todo 2) The Map class and the map validator are done
 
 
 
