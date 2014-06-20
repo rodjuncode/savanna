@@ -16,14 +16,17 @@ public class TravellingSalesman implements Dna {
 	}
 	
 	public void mutate() {
-		// (3) Needs refactoring. It needs to contemplate any number of cities (the main goal here is not the Travel Salesman)
+		// (3) Needs refactoring. It needs to contemplate any number of cities
 		this.setRoute(new String[]{
 									this.route[0], 
-									this.route[3], 
+									this.route[6], 
 									this.route[2], 
-									this.route[1], 
-									this.route[4]
-									});
+									this.route[3], 
+									this.route[4],
+									this.route[5],											
+									this.route[1],
+									this.route[7]
+		});
 	}
 	
 	public Dna crossover(Dna dna) {

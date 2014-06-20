@@ -1,4 +1,4 @@
-[06/18/2014 - 20h50 - GMT -3]
+[18/06/2014 - 20h50 - GMT -3]
 I've been running into several bumps and walls during the 
 coding of the Travelling Salesman for the Savanna GA Stack. 
 The modeling of the Dna for this particular problem is not
@@ -55,7 +55,7 @@ many times as we need in a single crossover operation.
 
 
 
-[06/19/2014 - 11h13 - GMT -3]
+[19/06/2014 - 11h13 - GMT -3]
 Alright, so I was never a huge fan of the way I was storing the maps.
 Today I came up with an idea: instead of emulating a matrix with
 a HashMap inside of a HashMap (my main goal here was to have the key->value
@@ -68,8 +68,16 @@ to there. So (Todo 2) now becomes creating the Map class, implementing the
 new method for keeping the info about the distances and allowing the
 call of checkMap map method (ok, Todo 2.1 and Todo 2.2). 
 
-[06/19/2014 - 17h46 - GMT -3]
-(Todo 2) The Map class and the map validator are done
+[19/06/2014 - 17h46 - GMT -3]
+(Todo 2) The Map class and the map validator are done.
+
+[20/06/2014 - 12h14 - GMT -3]
+(Todo 3) The mutation operator and (Todo 4) The Factory are implemented.
+However, for now they are not prepared to deal with any kinds of maps. The whole
+code is being prepared focusing for now only on the specific map listed above, with
+minor changes so we know for sure the best solution for it, for tests purposes.
+After we succeed in the first test, I wanna go back to these methods and prepare
+them to solve a map of any size. Let's move to (Todo 5) and (Todo 6) now.
 
 
 

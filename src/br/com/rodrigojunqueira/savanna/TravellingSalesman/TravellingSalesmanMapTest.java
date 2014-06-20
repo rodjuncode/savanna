@@ -51,13 +51,13 @@ public class TravellingSalesmanMapTest {
 		map.add("E");
 		map.add("F");	
 		map.add("G");
-		map.setAllDistancesFor("A", new int[]{0, 2, 2, 4, 5, 8, 5});
-		map.setAllDistancesFor("B", new int[]{2, 0, 8, 3, 8, 1, 5});		
-		map.setAllDistancesFor("C", new int[]{2, 8, 0, 7, 2, 2, 1});
-		map.setAllDistancesFor("D", new int[]{4, 3, 7, 0, 1, 4, 4});
-		map.setAllDistancesFor("E", new int[]{5, 8, 2, 1, 0, 5, 2});
-		map.setAllDistancesFor("F", new int[]{8, 1, 2, 4, 5, 0, 3});
-		map.setAllDistancesFor("G", new int[]{5, 5, 1, 4, 2, 3, 0});	
+		map.setAllDistancesFor("A", new int[]{0, 1, 2, 4, 5, 8, 1});
+		map.setAllDistancesFor("B", new int[]{1, 0, 1, 3, 8, 2, 5});		
+		map.setAllDistancesFor("C", new int[]{2, 1, 0, 1, 2, 2, 1});
+		map.setAllDistancesFor("D", new int[]{4, 3, 1, 0, 1, 4, 4});
+		map.setAllDistancesFor("E", new int[]{5, 8, 2, 1, 0, 1, 2});
+		map.setAllDistancesFor("F", new int[]{8, 2, 2, 4, 1, 0, 1});
+		map.setAllDistancesFor("G", new int[]{1, 5, 1, 4, 2, 1, 0});	
 		assertEquals("After setting up distances with an Array", true, map.validate());
 	}
 

@@ -27,11 +27,12 @@ public class TravellingSalesmanMap {
 	}
 
 	public void setDistance(String cityA, String cityB, int distance) {
+		String forward = cityA.concat(cityB);
+		String backward = cityB.concat(cityA);
 		if (cityA != cityB &&
 			this.cities.contains(cityA) && 
-			this.cities.contains(cityB)) {
-			String forward = cityA.concat(cityB);
-			String backward = cityB.concat(cityA);
+			this.cities.contains(cityB) &&
+			!this.distances.containsKey(forward)) {
 			this.distances.put(forward, distance);
 			this.distances.put(backward, distance);
 		}
@@ -77,7 +78,11 @@ public class TravellingSalesmanMap {
 	}
 
 	public void setAllDistancesFor(String city, int[] distances) {
-		
+		if (distances.length == this.cities.size()) {
+			for (int i = 0; i < distances.length; i++) {
+				this.setDistance(city, this.cities.get(i), distances[i]);
+			}
+		}
 	}
 
 }
