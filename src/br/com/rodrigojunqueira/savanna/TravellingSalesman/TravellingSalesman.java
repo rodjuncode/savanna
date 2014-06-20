@@ -1,6 +1,9 @@
 package br.com.rodrigojunqueira.savanna.TravellingSalesman;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 import br.com.rodrigojunqueira.savanna.core.Dna;
 
@@ -10,6 +13,7 @@ public class TravellingSalesman implements Dna {
 	private int totalDistance;
 	private static int goal;
 	private TravellingSalesmanMap map;
+	private HashMap<String, Integer> moves;
 	
 	public TravellingSalesman(TravellingSalesmanMap newMap) {
 		this.map = newMap;
@@ -30,12 +34,53 @@ public class TravellingSalesman implements Dna {
 	}
 	
 	public Dna crossover(Dna dna) {
-		TravellingSalesman travel = (TravellingSalesman) dna;
+		TravellingSalesman travelToCrossover = (TravellingSalesman) dna;
+		HashMap<String, Integer> movesOnThisTravel = this.getMoves();
+		boolean moveFound = false;
+		String shortestMove = new String();
+		int shortestMoveCost = Collections.max(movesOnThisTravel.values());
+		while (!moveFound) {
+			for (Entry<String, Integer> move : movesOnThisTravel.entrySet()) {
+				if (move.getValue() <= shortestMoveCost) {
+					shortestMove = move.getKey();
+					shortestMoveCost = move.getValue();
+				}
+			}
+			
+			if (travelToCrossover.getMoves().containsKey(shortestMove)) {
+				movesOnThisTravel.remove(shortestMove);
+			} else {
+				moveFound = true;
+			}
+		}
+
+		String newMoveStart = Character.toString(shortestMove.charAt(0));
+		String newMoveEnd = Character.toString(shortestMove.charAt(1));
+
+		String[] newRoute = travelToCrossover.getRoute();	
+		
+		int indexCitySwapA = 0;
+		int indexCitySwapB = 0;
+		for (int i = 0; i < newRoute.length; i++) {
+			if (newRoute[i].equals(newMoveStart)) indexCitySwapA = i + 1;
+			if (newRoute[i].equals(newMoveEnd)) indexCitySwapB = i;			
+		}
+		newRoute[indexCitySwapB] = newRoute[indexCitySwapA];
+		newRoute[indexCitySwapA] = newMoveEnd;
+		
 		TravellingSalesman newTravel = new TravellingSalesman(this.map);
-		newTravel.setRoute(travel.route);
+		newTravel.setRoute(newRoute);
 		return newTravel;
 	}	
 
+	private String[] getRoute() {
+		return this.route;
+	}
+	
+	private HashMap<String, Integer> getMoves() {
+		return this.moves;
+	}
+	
 	public boolean moreFitThan(Dna defiant) {
 		TravellingSalesman d = (TravellingSalesman) defiant;
 		if (this.getTotalDistance() < d.getTotalDistance()) {
@@ -73,7 +118,10 @@ public class TravellingSalesman implements Dna {
 
 	public void setRoute(String[] newRoute) {
 		this.route = newRoute;
-		
+		this.moves = new HashMap<String, Integer>();
+		for (int i = 0; i < this.route.length - 1; i++) {
+			this.moves.put(this.route[i].concat(this.route[i+1]), this.map.getDistance(this.route[i], this.route[i+1]));
+		}
 	}
 
 	public int getTotalDistance() {
@@ -138,5 +186,12 @@ public class TravellingSalesman implements Dna {
 	public void setMap(TravellingSalesmanMap newMap) {
 		this.map = newMap;		
 	}
+
+	public boolean hasMove(String cityA, String cityB) {
+		if (this.moves.containsKey(cityA.concat(cityB))) return true;
+		else return false;
+	}
+	
+	
 
 }

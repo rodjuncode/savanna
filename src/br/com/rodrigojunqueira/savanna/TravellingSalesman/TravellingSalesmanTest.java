@@ -33,15 +33,15 @@ public class TravellingSalesmanTest {
 		assertEquals(17, travel.getTotalDistance());
 	}
 	
-	//@Test
+	@Test
 	public void crossover() {
 		TravellingSalesman travel1 = new TravellingSalesman(this.map());
-		travel1.setRoute(new String[]{"A", "D", "C", "B", "A"});
+		travel1.setRoute(new String[]{"A", "C", "G", "B", "F", "D", "E", "A"});
 		TravellingSalesman travel2 = new TravellingSalesman(this.map());
-		travel2.setRoute(new String[]{"A", "C", "B", "D", "A"});
+		travel2.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
 		TravellingSalesman travel3 = (TravellingSalesman) travel1.crossover(travel2);
 		travel3.evaluate();
-		assertEquals(12, travel3.getTotalDistance());		
+		assertEquals(16, travel3.getTotalDistance());		
 	}
 
 	@Test
@@ -86,8 +86,15 @@ public class TravellingSalesmanTest {
 		assertEquals("After invalid route, with repeated cities", false, travel.checkRoute());	
 		travel.setRoute(new String[]{"A", "D", "C", "B", "A"}); 				// Invalid. Not all cities visited.
 		assertEquals("After invalid route, not all cities visited", false, travel.checkRoute());		
-	
 	}
+	
+	@Test
+	public void checkIfRouteHasCertainMove() {
+		TravellingSalesman travel =  new TravellingSalesman(this.map());
+		travel.setRoute(new String[]{"A", "D", "C", "B", "F", "E", "G", "A"});
+		assertEquals(true, travel.hasMove("G", "A"));
+	}
+
 	 
 	
 }
