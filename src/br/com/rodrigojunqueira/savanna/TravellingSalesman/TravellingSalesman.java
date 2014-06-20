@@ -20,17 +20,30 @@ public class TravellingSalesman implements Dna {
 	}
 	
 	public void mutate() {
-		// (3) Needs refactoring. It needs to contemplate any number of cities
-		this.setRoute(new String[]{
-									this.route[0], 
-									this.route[6], 
-									this.route[2], 
-									this.route[3], 
-									this.route[4],
-									this.route[5],											
-									this.route[1],
-									this.route[7]
-		});
+		if (Math.random() > 0.5) {
+			// (3) Needs refactoring. It needs to contemplate any number of cities
+			this.setRoute(new String[]{
+					this.route[0], 
+					this.route[4], 
+					this.route[1], 
+					this.route[3], 
+					this.route[6],
+					this.route[5],											
+					this.route[2],
+					this.route[7]
+			});
+		} else {
+			this.setRoute(new String[]{
+					this.route[0], 
+					this.route[6], 
+					this.route[2], 
+					this.route[3], 
+					this.route[4],
+					this.route[5],											
+					this.route[1],
+					this.route[7]
+			});			
+		}
 	}
 	
 	public Dna crossover(Dna dna) {
@@ -38,8 +51,8 @@ public class TravellingSalesman implements Dna {
 		HashMap<String, Integer> movesOnThisTravel = this.getMoves();
 		boolean moveFound = false;
 		String shortestMove = new String();
-		int shortestMoveCost = Collections.max(movesOnThisTravel.values());
-		while (!moveFound) {
+		while (!moveFound) {	
+			int shortestMoveCost = Collections.max(movesOnThisTravel.values());
 			for (Entry<String, Integer> move : movesOnThisTravel.entrySet()) {
 				if (move.getValue() <= shortestMoveCost) {
 					shortestMove = move.getKey();
@@ -52,6 +65,9 @@ public class TravellingSalesman implements Dna {
 			} else {
 				moveFound = true;
 			}
+			if (movesOnThisTravel.isEmpty()) {
+				moveFound = true; // they are the same
+			}
 		}
 
 		String newMoveStart = Character.toString(shortestMove.charAt(0));
@@ -62,7 +78,7 @@ public class TravellingSalesman implements Dna {
 		int indexCitySwapA = 0;
 		int indexCitySwapB = 0;
 		for (int i = 0; i < newRoute.length; i++) {
-			if (newRoute[i].equals(newMoveStart)) indexCitySwapA = i + 1;
+			if (newRoute[i].equals(newMoveStart) && i < newRoute.length - 1) indexCitySwapA = i + 1;
 			if (newRoute[i].equals(newMoveEnd)) indexCitySwapB = i;			
 		}
 		newRoute[indexCitySwapB] = newRoute[indexCitySwapA];
@@ -192,6 +208,9 @@ public class TravellingSalesman implements Dna {
 		else return false;
 	}
 	
+	public void show() {
+		System.out.println(this.getTotalDistance() + " - " + this.route[0] + ", " + this.route[1] + ", " + this.route[2] + ", " + this.route[3] + ", " + this.route[4] + ", " + this.route[5] + ", " + this.route[6] + ", " + this.route[6]);
+	}
 	
 
 }

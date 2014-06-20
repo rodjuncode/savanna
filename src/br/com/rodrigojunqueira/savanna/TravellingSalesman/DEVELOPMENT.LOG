@@ -97,6 +97,9 @@ minor changes so we know for sure the best solution for it, for tests purposes.
 After we succeed in the first test, I wanna go back to these methods and prepare
 them to solve a map of any size. Let's move to (Todo 5) and (Todo 6) now.
 
+[20/06/2014 - 17h00 - GMT -3]
+Ok, so we have pretty much everything implemented, but the crossover operation 
+is still very glitchy. I need to break it down and refactor it using unit testing. 
 
 
  

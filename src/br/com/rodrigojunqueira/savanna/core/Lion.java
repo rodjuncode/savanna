@@ -66,6 +66,9 @@ public class Lion implements Comparable<Lion> {
 		return this.dna.isGoodEnough();
 	}
 		
+	public void show() {
+		this.dna.show();
+	}
 	
 
 }

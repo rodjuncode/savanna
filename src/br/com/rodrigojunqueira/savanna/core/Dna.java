@@ -63,4 +63,6 @@ public interface Dna {
 	 */
 	public boolean isGoodEnough();
 	
+	public void show();
+	
 }
