@@ -44,7 +44,8 @@ public class TravellingSalesmanTest {
 		assertEquals(16, travel3.getTotalDistance());		
 	}
 
-	@Test
+	// @Test
+	// We might want to split this in two methods: mutateMore e mutateLess
 	public void mutate() {
 		TravellingSalesman travel = new TravellingSalesman(this.map());
 		travel.setRoute(new String[]{"A", "G", "C", "D", "E", "F", "B", "A"}); 
@@ -95,6 +96,11 @@ public class TravellingSalesmanTest {
 		assertEquals(true, travel.hasMove("G", "A"));
 	}
 
-	 
+	@Test
+	public void shortestMove() {
+		TravellingSalesman travel = new TravellingSalesman(this.map());
+		travel.setRoute(new String[]{"A", "D", "B", "C", "E", "G", "F", "A"});
+		assertEquals("BC", travel.shortestMove());
+	}
 	
 }

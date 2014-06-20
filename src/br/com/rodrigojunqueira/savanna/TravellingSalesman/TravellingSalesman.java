@@ -56,7 +56,7 @@ public class TravellingSalesman implements Dna {
 			for (Entry<String, Integer> move : movesOnThisTravel.entrySet()) {
 				if (move.getValue() <= shortestMoveCost) {
 					shortestMove = move.getKey();
-					shortestMoveCost = move.getValue();
+					shortestMoveCost = move.getValue();	
 				}
 			}
 			
@@ -210,6 +210,18 @@ public class TravellingSalesman implements Dna {
 	
 	public void show() {
 		System.out.println(this.getTotalDistance() + " - " + this.route[0] + ", " + this.route[1] + ", " + this.route[2] + ", " + this.route[3] + ", " + this.route[4] + ", " + this.route[5] + ", " + this.route[6] + ", " + this.route[6]);
+	}
+
+	public String shortestMove() {
+		String shortestMove = new String();
+		int shortestMoveCost = Collections.max(this.moves.values());
+		for (Entry<String, Integer> move : this.moves.entrySet()) {
+			if (move.getValue() <= shortestMoveCost) {
+				shortestMove = move.getKey();
+				shortestMoveCost = move.getValue();
+			}
+		}
+		return shortestMove;
 	}
 	
 
