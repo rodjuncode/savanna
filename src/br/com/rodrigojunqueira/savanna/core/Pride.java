@@ -20,8 +20,7 @@ public class Pride {
 	private DnaFactory dnaFactory;
 	private Lion lionKing;
 	private Lion lionNomad;
-
-
+	
 	/**
 	 * A new Pride is created, empty and on generation 0.
 	 * @param dnaFactory The object that will create new Dna's for the Lions born in this Pride
@@ -130,6 +129,9 @@ public class Pride {
 				this.lions[i].mutate();
 			}
 		}		
+	}
+	
+	public void setSafeMode(boolean safeModeNewStatus) {
 	}
 	
 }

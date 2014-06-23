@@ -103,8 +103,10 @@ public class MinusXSquared implements Dna {
 		} else return false;
 	}
 
-	public void show() {
-		
+	public void show() { }
+
+	public boolean validate() {
+		return true;
 	}
 
 

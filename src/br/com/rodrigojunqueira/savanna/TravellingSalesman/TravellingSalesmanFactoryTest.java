@@ -30,7 +30,7 @@ public class TravellingSalesmanFactoryTest {
 		TravellingSalesmanFactory dnaFactory = new TravellingSalesmanFactory();
 		dnaFactory.setMap(this.map());
 		TravellingSalesman dna = (TravellingSalesman) dnaFactory.generate();
-		assertEquals(true, dna.checkRoute());
+		assertEquals(true, dna.validate());
 		
 	}
 

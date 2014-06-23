@@ -148,6 +148,15 @@ everything. I am sure there is lots to refactor code, looking for more efficient
 or organized ways of doing stuff (Todo 11). Overall I am satisfied with the base of the
 Genetic Algorithm, cause I barely had to touch it.   
 
+[23/06/2014 - 10h11 - GMT -3]
+The TravellingSalesman problem is finally done and with no bugs. Most of the time,
+running the GA finds the best solution in less than 100 generations. A few times
+the search get stuck in a local minor. I believe this can be solved with
+adjustments on the mutation operation. Anyways, I need to organize the code
+a little better now, improve documentation, make it more efficient, but I feel
+I could try a bigger map at this point. Let's see what I can do about that
+before moving on.
+
  
 
 

@@ -63,6 +63,11 @@ public interface Dna {
 	 */
 	public boolean isGoodEnough();
 	
+	/**
+	 * The way the Dna presents itself, showing clearly the solution proposed for the problem.
+	 */
 	public void show();
+	
+	public boolean validate();
 	
 }

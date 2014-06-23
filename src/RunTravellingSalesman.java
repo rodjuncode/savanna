@@ -29,9 +29,10 @@ public class RunTravellingSalesman {
 		
 		Pride pride = new Pride(travellingSalesmanFactory);
 		
-		pride.populate(10);
+		pride.populate(15);
 		while (!pride.getKing().isGoodEnough()) {
 			pride.nextGeneration();
+			System.out.print(pride.getGeneration() + " - ");
 			pride.getKing().show();
 		}
 		

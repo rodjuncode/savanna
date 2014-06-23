@@ -80,13 +80,13 @@ public class TravellingSalesmanTest {
 	public void checkRoute() {
 		TravellingSalesman travel = new TravellingSalesman(this.map());
 		travel.setRoute(new String[]{"A", "D", "C", "B", "F", "E", "G", "A"}); 	// Valid. Starts and ends at A, no repeated cities and all cities visited.
-		assertEquals("After valid route", true, travel.checkRoute());
+		assertEquals("After valid route", true, travel.validate());
 		travel.setRoute(new String[]{"A", "D", "C", "B"}); 						// Invalid. Ends at B.
-		assertEquals("After invalid route, ending on city B", false, travel.checkRoute());		
+		assertEquals("After invalid route, ending on city B", false, travel.validate());		
 		travel.setRoute(new String[]{"A", "D", "C", "B", "G", "E", "G", "A"});	// Invalid. Repeated cities.
-		assertEquals("After invalid route, with repeated cities", false, travel.checkRoute());	
+		assertEquals("After invalid route, with repeated cities", false, travel.validate());	
 		travel.setRoute(new String[]{"A", "D", "C", "B", "A"}); 				// Invalid. Not all cities visited.
-		assertEquals("After invalid route, not all cities visited", false, travel.checkRoute());		
+		assertEquals("After invalid route, not all cities visited", false, travel.validate());		
 	}
 	
 	@Test
