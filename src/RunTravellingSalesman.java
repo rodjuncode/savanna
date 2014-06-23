@@ -23,18 +23,19 @@ public class RunTravellingSalesman {
 		map.setAllDistancesFor("E", new int[]{5, 8, 2, 1, 0, 1, 2});
 		map.setAllDistancesFor("F", new int[]{8, 2, 2, 4, 1, 0, 1});
 		map.setAllDistancesFor("G", new int[]{1, 5, 1, 4, 2, 1, 0});		
-		TravellingSalesman.setGoal(8);
+		TravellingSalesman.setGoal(7);
 		TravellingSalesmanFactory travellingSalesmanFactory = new TravellingSalesmanFactory();
 		travellingSalesmanFactory.setMap(map);
 		
 		Pride pride = new Pride(travellingSalesmanFactory);
 		
-		pride.populate(4);
+		pride.populate(10);
 		while (!pride.getKing().isGoodEnough()) {
 			pride.nextGeneration();
 			pride.getKing().show();
 		}
 		
+	
 		System.out.println("Finished on generation " + pride.getGeneration());
 		
 		

@@ -32,6 +32,7 @@ public class TravellingSalesmanFactory implements DnaFactory {
 		newRoute[7] = "A";
 		newDna.setRoute(newRoute);
 		return newDna;
+		
 	}
 
 	public void setMap(TravellingSalesmanMap newMap) {

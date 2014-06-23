@@ -71,8 +71,6 @@ In this example, we would have this solution as a cub:
 described above needs to be encapsulated so we can reproduce it as
 many times as we need in a single crossover operation.
 
-
-
 [19/06/2014 - 11h13 - GMT -3]
 Alright, so I was never a huge fan of the way I was storing the maps.
 Today I came up with an idea: instead of emulating a matrix with
@@ -98,9 +96,57 @@ After we succeed in the first test, I wanna go back to these methods and prepare
 them to solve a map of any size. Let's move to (Todo 5) and (Todo 6) now.
 
 [20/06/2014 - 17h00 - GMT -3]
-Ok, so we have pretty much everything implemented, but the crossover operation 
-is still very glitchy. I need to break it down and refactor it using unit testing. 
+Ok, so we have pretty much everything implemented, (Todo 5 and 6) are done, but 
+the crossover operation is still very glitchy. I need to break it down and 
+refactor it using unit testing. 
 
+[21/06/2014 - 10h34 - GMT -3]
+Yesterday I got a lot of progress on the Travelling Salesman class (and its derivatives).
+However, and I consider myself guilty, there is a certain lack of documentation. Like
+no documentation. And it's becoming a mess. I need to stop now and organize all this
+code. The bug is on the crossover method, that's for sure. Ok, that's not totally sure.
+So I guess the first thing would be making sure of this. (Todo 7) I need to isolate
+this bug, so I will replace the crossover operation for something really simple and 
+test the program again. I need to get to a point where there is no bugs at all. I am
+hoping the glitch is gone after I do it and then I am gonna be sure the problem resides
+on the crossover method. (Todo 8) I need to document the TravellingSalesman, 
+TravellingSalesmanFactory and TravellingSalesmanMap classes. That includes also reviewing
+each method and making sure I need it that way. I don't want to spend lots of time
+refactoring now, but if I can improve the code fast, I guess it wont hurt to make
+little changes. Then the most important, (Todo 9) I need to solve this bug. The best 
+approach is to abstract some of the steps to other methods, so the code gets simpler,
+and this way I can do the development with unit testing. I bet the main reason
+this bug appeared was cause I let myself go and wrote a bunch of stuff without making
+unit testing. Let's go back then and be more loyal to the TDD philosophy. After that the
+code will be ready to receive some cool extensions, like the creating maps automatically.
+I wanna test the GA with 20 or 25 cities.
+
+[21/06/2014 - 11h30 - GMT -3]
+Good news! I've accomplished (Todo 7), isolating the crossover method. 
+Then I runned the program hundreds of times and had no bug at all. The problem is 
+on that method, for sure. Time to organized all the code before refactoring
+this chunk.
+ 
+[22/06/2014 - 10h27 - GMT -3]
+So, we had lots of things going on since yesterday. I've fixed that first bug
+and the GA is running much more smooth now. However, there are still two bugs.
+One is quite frequent and has to do with the fact that sometimes the crossover
+can't find its shortest move that is not on its mate. An empty string is returned
+and I get a OutOfBoundException. The other problem, much less frequent, is generating
+invalid routes. I am beat on this one for now. Need further testing.
+ 
+[22/06/2014 - 23h03 - GMT -3]
+Ok, so I managed to fix the bug in the crossover. It was kinda a pain in the ass
+to find it. It was happening to a very particular scenario and due to the fact
+that lots of things in the algorithm are randomized, it's hard to create tests
+to find the bug. Although I must admit that part of the bug was being caused
+but two embasarrassing  mistakes I've made. Basically, I was trying to duplicate
+data structure objects via direct assignment. So I was chaning stuff I shouldn't
+touch. Anyways, it's fixed. Now I still need to deal with crossover when the
+two Dna's involved are the same (I will call that Todo 10) and I need to organized
+everything. I am sure there is lots to refactor code, looking for more efficient
+or organized ways of doing stuff (Todo 11). Overall I am satisfied with the base of the
+Genetic Algorithm, cause I barely had to touch it.   
 
  
 

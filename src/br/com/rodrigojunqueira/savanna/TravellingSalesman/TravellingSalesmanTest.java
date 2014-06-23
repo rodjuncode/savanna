@@ -103,4 +103,34 @@ public class TravellingSalesmanTest {
 		assertEquals("BC", travel.shortestMove());
 	}
 	
+	@Test
+	public void findingShortestMoveOnAMissingOnB() {
+		TravellingSalesman travelA = new TravellingSalesman(this.map());
+		travelA.setRoute(new String[]{"A", "C", "G", "B", "F", "D", "E", "A"});
+		TravellingSalesman travelB = new TravellingSalesman(this.map());
+		travelB.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
+		assertEquals("DE", travelA.getShortestMoveMissingOn(travelB));
+		//travelA.setRoute(new String[]{"A", "G", "F", "C", "E", "D", "B", "A"});
+		//travelB.setRoute(new String[]{"A", "D", "B", "F", "C", "E", "G", "A"});
+		//assertEquals("AG", travelA.getShortestMoveMissingOn(travelB));
+	}
+	
+	@Test
+	public void swapingMoves() {
+		TravellingSalesman travel = new TravellingSalesman(this.map());
+		//travel.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
+		//assertEquals(new String[]{"A", "B", "F", "C", "G", "D", "E", "A"}, travel.getRouteSwapingMoves("DE"));
+		//travel.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
+		//assertEquals(new String[]{"A", "B", "E", "F", "G", "D", "C", "A"}, travel.getRouteSwapingMoves("FG"));
+		//travel.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
+		//assertEquals(new String[]{"A", "C", "E", "B", "G", "D", "F", "A"}, travel.getRouteSwapingMoves("AC"));
+		//travel.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
+		//assertEquals(new String[]{"A", "B", "F", "C", "G", "D", "E", "A"}, travel.getRouteSwapingMoves("BF"));
+		//travel.setRoute(new String[]{"A", "B", "E", "C", "G", "D", "F", "A"});
+		//assertEquals(new String[]{"A", "B", "E", "C", "G", "F", "D", "A"}, travel.getRouteSwapingMoves("DA"));		
+		travel.setRoute(new String[]{"A", "D", "C", "B", "F", "G", "E", "A"});
+		assertEquals(new String[]{"A", "G", "C", "B", "F", "D", "E", "A"}, travel.getRouteSwapingMoves("AG"));		
+		
+	}
+	
 }
