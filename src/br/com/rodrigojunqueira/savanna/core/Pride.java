@@ -15,7 +15,7 @@ package br.com.rodrigojunqueira.savanna.core;
  */
 public class Pride {
 
-	private int generation;
+	private long generation;
 	private Lion[] lions;
 	private DnaFactory dnaFactory;
 	private Lion lionKing;
@@ -30,7 +30,7 @@ public class Pride {
 		this.dnaFactory = dnaFactory;
 	}
 	
-	public int getGeneration() {
+	public long getGeneration() {
 		return this.generation;
 	}
 
@@ -62,9 +62,8 @@ public class Pride {
 	 * 4) Increments the generation counter.
 	 */
 	public void nextGeneration() {
-		this.mate();
 		this.mutate();
-		this.rank();
+		this.mate();
 		this.generation++;
 	}
 
@@ -118,6 +117,7 @@ public class Pride {
 				this.lions[i] = this.lionKing.mate(this.lions[i]);
 			}
 		}
+		this.rank();
 	}
 	
 	/**
@@ -129,6 +129,7 @@ public class Pride {
 				this.lions[i].mutate();
 			}
 		}		
+		this.rank();
 	}
 	
 	public void setSafeMode(boolean safeModeNewStatus) {

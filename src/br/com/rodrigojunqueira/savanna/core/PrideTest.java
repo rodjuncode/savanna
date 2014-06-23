@@ -22,7 +22,7 @@ public class PrideTest {
 	public void nextGenerationCount() {
 		Pride pride = new Pride(new MinusXSquaredFactory());
 		pride.populate(5);
-		int generation = pride.getGeneration();
+		long generation = pride.getGeneration();
 		pride.nextGeneration();
 		assertEquals("After the next generation of the Pride", generation + 1, pride.getGeneration());		
 	}

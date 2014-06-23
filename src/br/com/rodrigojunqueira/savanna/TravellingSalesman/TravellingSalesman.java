@@ -29,16 +29,26 @@ public class TravellingSalesman implements Dna {
 	private void copyRoute(TravellingSalesman travelToCopyFrom) {
 		this.route = new String[travelToCopyFrom.route.length];
 		System.arraycopy(travelToCopyFrom.route, 0, this.route, 0, travelToCopyFrom.route.length);
+		this.updateMoves();
+		this.evaluate();
 	}
 
 	public Dna crossover(Dna dna) {
 		TravellingSalesman travelToCrossoverWith = (TravellingSalesman) dna;
-		TravellingSalesman newTravel = new TravellingSalesman(this.map);
-		if (!this.sameRoute(travelToCrossoverWith)) {
-			String moveToSwap = this.getShortestMoveMissingOn(travelToCrossoverWith);
-			newTravel.setRoute(travelToCrossoverWith.getRouteSwapingMoves(moveToSwap));
-		} else {
-			newTravel.copyRoute(travelToCrossoverWith);
+		TravellingSalesman newTravel = null;
+		for (int i = 0; i < Math.round(this.route.length/2); i++) {
+			newTravel = new TravellingSalesman(this.map);
+			if (!this.sameRoute(travelToCrossoverWith)) {
+				String moveToSwap = this.getShortestMoveMissingOn(travelToCrossoverWith);
+				if (moveToSwap.length() == 0) {
+					this.show();
+					travelToCrossoverWith.show();
+				}
+				newTravel.setRoute(travelToCrossoverWith.getRouteSwapingMoves(moveToSwap));
+			} else {
+				newTravel.copyRoute(travelToCrossoverWith);
+			}
+			travelToCrossoverWith = newTravel;
 		}
 		return newTravel;
 	}	
@@ -52,6 +62,9 @@ public class TravellingSalesman implements Dna {
 	}
 
 	public String[] getRouteSwapingMoves(String newMove) {
+		if (newMove.length() == 0) {
+			int z = 0;
+		}
 		String startCity = Character.toString(newMove.charAt(0));	
 		String endCity = Character.toString(newMove.charAt(1));		
 		String[] newRoute = new String[this.route.length];
@@ -130,13 +143,16 @@ public class TravellingSalesman implements Dna {
 	}
 	
 	public void mutate() {
-		for (int i = 4; i > 0; i--) {
-			if (Math.random() < i*0.15) { // 60% - 45% - 30% - 15% 
-				int randomPositionFrom = 1 + (int)(Math.random() * ((Math.round(this.route.length/2) - 2) + 1));
-				int randomPositionTo = randomPositionFrom + Math.round(this.route.length/2) - 1;
-				String aux = this.route[randomPositionFrom];
-				this.route[randomPositionFrom] = this.route[randomPositionTo];
-				this.route[randomPositionTo] = aux;
+		int n = 2;
+		for (int i = n; i > 0; i--) {
+			if (Math.random() < i*0.25) {
+				for (int j = n - i; j < n; j++) {
+					int randomPositionFrom = 1 + (int)(Math.random() * ((Math.round(this.route.length/2) - 2) + 1));
+					int randomPositionTo = randomPositionFrom + Math.round(this.route.length/2) - 1;
+					String aux = this.route[randomPositionFrom];
+					this.route[randomPositionFrom] = this.route[randomPositionTo];
+					this.route[randomPositionTo] = aux;
+				}
 			}
 		}
 		this.evaluate();
@@ -227,7 +243,11 @@ public class TravellingSalesman implements Dna {
 	}
 
 	public void show() {
-		System.out.println(this.getTotalDistance() + " - " + this.route[0] + ", " + this.route[1] + ", " + this.route[2] + ", " + this.route[3] + ", " + this.route[4] + ", " + this.route[5] + ", " + this.route[6] + ", " + this.route[7]);
+		for (int i = 0; i < this.route.length; i++) {
+			System.out.print(this.route[i] + " - ");
+		}
+		System.out.println(this.getTotalDistance());
+		// System.out.println(this.getTotalDistance() + ", Validated: " + this.validate());
 	}
 
 	public boolean validate() {
