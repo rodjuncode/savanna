@@ -50,22 +50,30 @@ public class RunTravellingSalesman {
 		map.setAllDistancesFor("S", new int[]{4, 4, 3, 7, 2, 2, 4, 3, 1, 6, 2, 8, 2, 7, 4, 2, 3, 1, 0, 1});
 		map.setAllDistancesFor("T", new int[]{1, 1, 5, 2, 4, 9, 5, 2, 6, 7, 8, 2, 8, 9, 3, 7, 6, 8, 1, 0});
 
-		TravellingSalesman.setGoal(20);
+		TravellingSalesman.setGoal(22);
 		TravellingSalesmanFactory travellingSalesmanFactory = new TravellingSalesmanFactory();
 		travellingSalesmanFactory.setMap(map);
-		
-		Pride pride = null;
-		
-		for (int i = 0; i < 10; i++) {
-			pride = new Pride(travellingSalesmanFactory);
+				
+		int goalCount = 0;
+		int totalCount = 0;
+		Pride pride = new Pride(travellingSalesmanFactory);
+		while(true) {
+			long startTime = System.currentTimeMillis();
 			pride.populate(50);
-			while (!pride.getKing().isGoodEnough() && pride.getGeneration() < 7000) {
+			while (!pride.getKing().isGoodEnough() && pride.getGeneration() < 100000) {
 				pride.nextGeneration();
 			}
-			System.out.print(pride.getGeneration() + " - ");
+			if (pride.getKing().isGoodEnough()) {
+				goalCount++;
+			}
+			totalCount++;
+			long endTime   = System.currentTimeMillis();
+			long totalTime = endTime - startTime;
+			System.out.println(goalCount + "/" + totalCount + " - Finished on generation " + pride.getGeneration() + " under " + totalTime/1000/60 + " minute(s).");
 			pride.getKing().show();
+
 		}
-		System.out.println("Finished on generation " + pride.getGeneration());
+		
 		
 		
 	}

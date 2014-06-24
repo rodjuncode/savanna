@@ -20,6 +20,7 @@ public class Pride {
 	private DnaFactory dnaFactory;
 	private Lion lionKing;
 	private Lion lionNomad;
+	private Lion lionElder;
 	
 	/**
 	 * A new Pride is created, empty and on generation 0.
@@ -62,8 +63,8 @@ public class Pride {
 	 * 4) Increments the generation counter.
 	 */
 	public void nextGeneration() {
-		this.mutate();
 		this.mate();
+		this.mutate();
 		this.generation++;
 	}
 
@@ -87,7 +88,10 @@ public class Pride {
 	public Lion getNomad() {
 		return this.lionNomad;
 	}
-
+	
+	public Lion getElder() {
+		return this.lionElder;
+	}
 	/**
 	 * Runs once through each Lion on the Pride and finds the first and second most fit individuals.
 	 * They will be set as the King and Nomad of this Pride.
@@ -96,12 +100,15 @@ public class Pride {
 
 		this.lionKing = this.lions[0];
 		this.lionNomad = this.lions[1];
+		this.lionElder = this.lions[0];
 		
 		for (int i = 0; i < this.lions.length; i++) {
 			if (this.lions[i].compareTo(this.lionKing) == 1) {
 				this.lionKing = this.lions[i];				
 			} else if (this.lions[i].compareTo(this.lionNomad) == 1) {
 				this.lionNomad = this.lions[i];
+			} else if (this.lions[i].compareTo(this.lionElder) == -1) {
+				this.lionElder = this.lions[i];
 			}
 		}
 		
@@ -112,10 +119,18 @@ public class Pride {
 	 * The King is not overwritten and goes to the next generation.
 	 */
 	public void mate() {
+		Lion cub;
 		for (int i = 0; i < this.lions.length; i++) {
 			if (this.lions[i] != this.lionKing) {
-				this.lions[i] = this.lionKing.mate(this.lions[i]);
-			}
+				//if (this.lions[i] == this.lionElder) {
+				//	this.lions[i] = new Lion(this.dnaFactory.generate());
+				//} else {
+					cub = this.lionKing.mate(this.lions[i]);
+					if (cub.compareTo(this.lions[i]) == 1) {
+						this.lions[i] = cub;
+					}
+				//}
+			} 
 		}
 		this.rank();
 	}

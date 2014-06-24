@@ -170,6 +170,173 @@ a little better now, improve documentation, make it more efficient, but I feel
 I could try a bigger map at this point. Let's see what I can do about that
 before moving on.
 
+[24/06/2014 - 20h35 - GMT -3]
+1/1 - Finished on generation 303 under 0 minute(s).
+A - H - J - K - F - G - R - Q - P - O - N - M - L - E - D - C - B - T - S - I - A - 22
+2/2 - Finished on generation 17094 under 0 minute(s).
+A - I - H - M - L - G - C - D - E - F - K - J - N - O - P - Q - R - S - T - B - A - 22
+3/3 - Finished on generation 1987 under 0 minute(s).
+A - B - C - N - M - H - D - E - F - G - R - Q - P - O - L - K - J - I - S - T - A - 22
+3/4 - Finished on generation 100000 under 4 minute(s).
+A - G - R - Q - P - O - H - M - S - T - B - N - C - D - E - L - K - F - J - I - A - 25
+3/5 - Finished on generation 100000 under 4 minute(s).
+A - Q - P - S - R - G - F - E - D - C - N - O - J - K - I - H - M - L - B - T - A - 24
+4/6 - Finished on generation 4279 under 0 minute(s).
+A - I - S - R - Q - P - J - K - F - G - H - M - N - O - L - E - D - C - B - T - A - 22
+5/7 - Finished on generation 2028 under 0 minute(s).
+A - G - H - M - N - C - D - E - L - K - F - O - P - Q - R - J - I - S - T - B - A - 22
+5/8 - Finished on generation 100000 under 5 minute(s).
+A - I - B - C - D - E - F - G - H - N - M - L - K - J - O - P - Q - R - S - T - A - 23
+5/9 - Finished on generation 100000 under 4 minute(s).
+A - G - C - B - L - N - M - O - P - Q - R - S - T - H - D - E - F - K - J - I - A - 25
+6/10 - Finished on generation 2325 under 0 minute(s).
+A - I - Q - P - O - L - G - H - M - N - C - D - E - F - K - J - R - S - T - B - A - 22
+7/11 - Finished on generation 302 under 0 minute(s).
+A - B - L - G - C - D - E - F - K - J - I - H - M - N - O - P - Q - R - S - T - A - 20
+8/12 - Finished on generation 21526 under 1 minute(s).
+A - G - R - S - T - D - E - F - K - J - I - H - M - L - B - C - N - O - P - Q - A - 22
+8/13 - Finished on generation 100000 under 5 minute(s).
+A - T - D - C - G - R - S - I - H - M - N - Q - P - O - F - J - K - E - L - B - A - 25
+9/14 - Finished on generation 77413 under 3 minute(s).
+A - G - H - J - K - F - E - D - C - N - M - L - O - P - Q - R - S - T - B - I - A - 22
+10/15 - Finished on generation 173 under 0 minute(s).
+A - B - C - D - E - F - G - L - K - J - I - H - M - N - O - P - Q - R - S - T - A - 20
+11/16 - Finished on generation 442 under 0 minute(s).
+A - I - J - K - L - M - H - D - E - F - G - C - N - O - P - Q - R - S - T - B - A - 22
+12/17 - Finished on generation 37828 under 30 minute(s).
+A - B - T - S - R - Q - P - O - D - C - N - M - H - I - J - K - F - E - L - G - A - 22
+13/18 - Finished on generation 626 under 0 minute(s).
+A - I - J - K - F - E - D - T - S - R - Q - P - O - N - C - B - L - M - H - G - A - 21
+14/19 - Finished on generation 4097 under 0 minute(s).
+A - I - H - M - N - C - D - E - L - B - T - S - R - G - F - K - J - O - P - Q - A - 22
+14/20 - Finished on generation 100000 under 5 minute(s).
+A - Q - P - R - S - T - B - C - D - E - F - G - H - M - N - O - L - K - J - I - A - 24
+14/21 - Finished on generation 100000 under 4 minute(s).
+A - C - D - E - L - O - P - H - M - N - Q - B - T - S - R - G - F - K - J - I - A - 24
+15/22 - Finished on generation 27 under 0 minute(s).
+A - B - C - D - E - F - G - L - K - J - I - H - M - N - O - P - Q - R - S - T - A - 20
+15/23 - Finished on generation 100000 under 5 minute(s).
+A - I - J - H - M - N - O - L - G - R - Q - P - K - F - B - C - D - E - S - T - A - 24
+16/24 - Finished on generation 3401 under 0 minute(s).
+A - B - T - S - E - D - C - N - O - P - Q - R - G - F - K - L - M - H - J - I - A - 22
+17/25 - Finished on generation 744 under 0 minute(s).
+A - B - C - D - E - F - K - J - I - H - G - N - M - L - O - P - Q - R - S - T - A - 22
+18/26 - Finished on generation 7186 under 0 minute(s).
+A - B - T - S - R - Q - P - D - E - F - O - N - C - G - H - M - L - K - J - I - A - 22
+18/27 - Finished on generation 100000 under 5 minute(s).
+A - I - S - R - Q - P - O - N - M - H - J - K - L - G - C - F - E - D - T - B - A - 23
+19/28 - Finished on generation 56 under 0 minute(s).
+A - G - H - P - O - L - M - N - C - D - E - F - K - J - I - Q - R - S - T - B - A - 22
+20/29 - Finished on generation 9845 under 0 minute(s).
+A - B - C - D - E - R - Q - P - O - N - L - M - H - G - F - K - J - I - S - T - A - 22
+21/30 - Finished on generation 3602 under 0 minute(s).
+A - G - L - E - F - K - J - I - S - R - Q - P - O - N - M - H - T - D - C - B - A - 22
+21/31 - Finished on generation 100000 under 5 minute(s).
+A - I - J - K - F - G - H - M - L - E - D - B - Q - P - O - N - C - R - S - T - A - 24
+22/32 - Finished on generation 19081 under 1 minute(s).
+A - I - S - T - B - L - G - C - D - E - F - K - J - R - Q - P - O - N - M - H - A - 22
+23/33 - Finished on generation 427 under 0 minute(s).
+A - T - B - F - K - J - I - S - R - G - H - M - N - C - D - E - L - O - P - Q - A - 22
+24/34 - Finished on generation 825 under 0 minute(s).
+A - N - M - L - O - P - Q - R - G - H - J - K - F - E - D - C - B - T - S - I - A - 22
+25/35 - Finished on generation 25578 under 1 minute(s).
+A - G - L - E - F - K - J - I - S - R - Q - P - O - N - M - H - D - C - B - T - A - 22
+26/36 - Finished on generation 54960 under 2 minute(s).
+A - I - D - E - F - K - J - H - M - L - B - T - S - R - Q - P - O - N - C - G - A - 22
+27/37 - Finished on generation 80843 under 4 minute(s).
+A - H - M - N - O - P - Q - R - J - I - S - T - B - C - D - E - L - K - F - G - A - 22
+28/38 - Finished on generation 3773 under 0 minute(s).
+A - B - C - N - O - P - Q - R - J - K - F - G - H - M - L - E - D - T - S - I - A - 22
+29/39 - Finished on generation 2373 under 0 minute(s).
+A - B - C - D - E - L - G - H - M - N - O - P - Q - R - F - K - J - I - S - T - A - 22
+29/40 - Finished on generation 100000 under 5 minute(s).
+A - B - C - N - M - O - L - K - J - I - D - E - F - G - H - P - Q - R - S - T - A - 23
+30/41 - Finished on generation 21787 under 1 minute(s).
+A - I - H - M - N - C - D - E - F - K - J - O - P - Q - R - S - T - B - L - G - A - 21
+31/42 - Finished on generation 12892 under 0 minute(s).
+A - I - J - K - L - O - P - Q - R - S - M - N - C - D - E - F - G - H - T - B - A - 22
+32/43 - Finished on generation 8816 under 0 minute(s).
+A - G - H - I - J - K - F - O - P - Q - R - S - E - D - C - N - M - L - B - T - A - 22
+33/44 - Finished on generation 3497 under 0 minute(s).
+A - T - S - R - Q - P - O - J - K - F - G - L - E - D - C - N - M - H - I - B - A - 22
+33/45 - Finished on generation 100000 under 5 minute(s).
+A - B - L - E - P - Q - R - S - I - J - K - F - G - H - M - O - N - C - D - T - A - 23
+34/46 - Finished on generation 25760 under 1 minute(s).
+A - T - S - R - Q - P - E - F - K - J - I - D - C - G - H - M - N - O - L - B - A - 22
+35/47 - Finished on generation 195 under 0 minute(s).
+A - I - H - N - M - L - K - J - O - P - Q - R - S - T - B - C - D - E - F - G - A - 22
+36/48 - Finished on generation 2285 under 0 minute(s).
+A - B - L - M - O - P - Q - N - C - D - E - F - K - J - I - H - G - R - S - T - A - 22
+37/49 - Finished on generation 1928 under 0 minute(s).
+A - B - C - D - E - F - G - H - P - O - N - M - L - K - J - I - Q - R - S - T - A - 22
+37/50 - Finished on generation 100000 under 5 minute(s).
+A - T - S - R - Q - P - N - O - M - H - I - J - K - L - G - F - E - D - C - B - A - 23
+38/51 - Finished on generation 24820 under 1 minute(s).
+A - I - H - J - K - F - G - R - Q - P - O - N - M - L - B - C - D - E - S - T - A - 22
+39/52 - Finished on generation 1038 under 0 minute(s).
+A - I - H - M - N - O - P - Q - R - S - T - B - C - D - E - L - K - J - F - G - A - 21
+40/53 - Finished on generation 280 under 0 minute(s).
+A - I - S - T - B - C - D - E - L - M - N - O - P - Q - R - J - K - F - G - H - A - 22
+40/54 - Finished on generation 100000 under 4 minute(s).
+A - N - M - H - T - B - C - G - F - E - D - L - O - P - Q - R - S - K - J - I - A - 24
+41/55 - Finished on generation 1578 under 0 minute(s).
+A - G - L - O - P - Q - R - S - T - B - C - N - M - H - D - E - F - K - J - I - A - 22
+41/56 - Finished on generation 100000 under 4 minute(s).
+A - G - H - P - O - N - M - L - T - S - R - Q - B - C - D - E - F - K - J - I - A - 23
+42/57 - Finished on generation 7738 under 0 minute(s).
+A - I - H - G - C - N - M - L - D - E - F - K - J - O - P - Q - R - S - T - B - A - 22
+43/58 - Finished on generation 79 under 0 minute(s).
+A - B - T - S - R - Q - P - D - E - F - K - J - I - H - M - C - N - O - L - G - A - 22
+44/59 - Finished on generation 873 under 0 minute(s).
+A - B - T - S - R - Q - P - O - J - K - L - M - N - C - D - E - F - G - H - I - A - 21
+45/60 - Finished on generation 34744 under 1 minute(s).
+A - L - O - P - Q - B - T - S - R - G - H - M - N - C - D - E - F - K - J - I - A - 22
+46/61 - Finished on generation 1028 under 0 minute(s).
+A - G - F - C - D - E - L - K - J - I - H - M - N - O - P - Q - R - S - T - B - A - 21
+47/62 - Finished on generation 653 under 0 minute(s).
+A - B - T - S - R - Q - P - O - J - K - F - E - L - M - N - C - D - I - H - G - A - 22
+48/63 - Finished on generation 1756 under 0 minute(s).
+A - I - H - M - L - K - J - N - O - P - Q - R - S - T - B - C - D - E - F - G - A - 22
+49/64 - Finished on generation 49949 under 2 minute(s).
+A - I - J - K - F - E - D - C - N - O - P - Q - R - S - M - L - G - H - T - B - A - 22
+49/65 - Finished on generation 100000 under 5 minute(s).
+A - G - K - F - E - L - B - T - S - R - Q - P - O - D - C - N - M - H - J - I - A - 24
+50/66 - Finished on generation 6893 under 0 minute(s).
+A - B - T - S - R - G - F - E - D - C - N - M - H - J - K - L - O - P - Q - I - A - 22
+50/67 - Finished on generation 100000 under 5 minute(s).
+A - B - C - N - M - H - I - D - P - O - L - E - K - J - F - G - Q - R - S - T - A - 25
+50/68 - Finished on generation 100000 under 5 minute(s).
+A - B - L - K - F - J - I - H - M - O - N - C - D - E - P - Q - G - R - S - T - A - 24
+51/69 - Finished on generation 11228 under 0 minute(s).
+A - I - J - K - L - O - P - Q - R - S - T - B - C - N - M - H - D - E - F - G - A - 22
+52/70 - Finished on generation 37227 under 1 minute(s).
+A - B - L - M - N - O - P - Q - R - S - E - D - C - G - F - K - J - I - H - T - A - 22
+53/71 - Finished on generation 81 under 0 minute(s).
+A - G - H - M - L - R - Q - P - O - N - C - D - E - F - K - J - I - S - T - B - A - 22
+54/72 - Finished on generation 3508 under 0 minute(s).
+A - G - F - E - D - C - N - O - P - Q - R - J - K - L - B - T - S - M - H - I - A - 22
+55/73 - Finished on generation 39986 under 2 minute(s).
+A - I - S - R - Q - P - O - J - K - F - E - D - C - N - M - H - T - B - L - G - A - 22
+55/74 - Finished on generation 100000 under 5 minute(s).
+A - N - M - H - I - S - F - K - J - O - P - Q - R - G - L - E - D - C - B - T - A - 23
+56/75 - Finished on generation 10508 under 0 minute(s).
+A - Q - R - S - T - B - C - N - O - P - D - E - F - K - J - I - H - M - L - G - A - 22
+56/76 - Finished on generation 100000 under 5 minute(s).
+A - G - L - O - P - Q - R - C - N - M - H - D - E - F - B - T - S - K - J - I - A - 25
+56/77 - Finished on generation 100000 under 5 minute(s).
+A - B - C - N - M - O - P - Q - R - S - T - D - E - L - K - F - G - H - J - I - A - 23
+57/78 - Finished on generation 4240 under 0 minute(s).
+A - B - T - S - R - Q - P - O - L - M - N - C - G - H - D - E - F - K - J - I - A - 22
+58/79 - Finished on generation 1244 under 0 minute(s).
+A - B - C - N - M - H - I - J - K - F - G - L - E - D - O - P - Q - R - S - T - A - 22
+59/80 - Finished on generation 8235 under 0 minute(s).
+A - I - J - O - N - M - H - P - Q - R - S - T - B - C - D - E - L - K - F - G - A - 22
+59/81 - Finished on generation 100000 under 5 minute(s).
+A - Q - R - G - H - M - N - C - D - E - L - B - T - S - P - O - F - K - J - I - A - 23
+60/82 - Finished on generation 411 under 0 minute(s).
+A - B - Q - P - O - L - E - F - K - J - I - H - M - N - C - D - T - S - R - G - A - 22
+
+
  
 
 

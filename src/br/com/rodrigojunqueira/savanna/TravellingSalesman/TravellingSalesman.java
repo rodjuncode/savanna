@@ -1,9 +1,12 @@
 package br.com.rodrigojunqueira.savanna.TravellingSalesman;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
+
 import br.com.rodrigojunqueira.savanna.core.Dna;
 
 public class TravellingSalesman implements Dna {
@@ -36,7 +39,7 @@ public class TravellingSalesman implements Dna {
 	public Dna crossover(Dna dna) {
 		TravellingSalesman travelToCrossoverWith = (TravellingSalesman) dna;
 		TravellingSalesman newTravel = null;
-		for (int i = 0; i < Math.round(this.route.length/2); i++) {
+		for (int i = 0; i < Math.round(this.route.length/3); i++) {
 			newTravel = new TravellingSalesman(this.map);
 			if (!this.sameRoute(travelToCrossoverWith)) {
 				String moveToSwap = this.getShortestMoveMissingOn(travelToCrossoverWith);
@@ -143,17 +146,24 @@ public class TravellingSalesman implements Dna {
 	}
 	
 	public void mutate() {
-		int n = 2;
-		for (int i = n; i > 0; i--) {
-			if (Math.random() < i*0.25) {
-				for (int j = n - i; j < n; j++) {
-					int randomPositionFrom = 1 + (int)(Math.random() * ((Math.round(this.route.length/2) - 2) + 1));
-					int randomPositionTo = randomPositionFrom + Math.round(this.route.length/2) - 1;
-					String aux = this.route[randomPositionFrom];
-					this.route[randomPositionFrom] = this.route[randomPositionTo];
-					this.route[randomPositionTo] = aux;
-				}
-			}
+		double mutationChance = Math.random();
+		if (mutationChance < 0.25) {
+			//int n = 2;
+			//for (int i = n; i > 0; i--) {
+			//	if (Math.random() < i*0.5) {
+			//		for (int j = n - i; j < n; j++) {
+						int randomPositionFrom = 1 + (int)(Math.random() * ((Math.round(this.route.length/2) - 2) + 1));
+						int randomPositionTo = randomPositionFrom + Math.round(this.route.length/2) - 1;
+						String aux = this.route[randomPositionFrom];
+						this.route[randomPositionFrom] = this.route[randomPositionTo];
+						this.route[randomPositionTo] = aux;
+			//		}
+			//	}
+			//}
+		} else if (mutationChance < 0.9){
+			List<String> reverseRoute = Arrays.asList(this.route);
+			Collections.reverse(reverseRoute);
+			this.route = (String[]) reverseRoute.toArray();
 		}
 		this.evaluate();
 		this.updateMoves();
