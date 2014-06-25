@@ -22,7 +22,7 @@ import java.util.HashMap;
  * 5) Optionally, cities can be removed from the map. All the distances relative to that city will be
  * ignored in the next distance queries;
  * 6) From now one the object can be queried abour distances between two given cities.
- * A current limitation of this class is the name of the cities. Right now it requires a unique
+ * A current limitation of this class is how the cities are represented. Right now it uses a unique
  * one character name. Soon I will make the city itself a class, so it can store more data.
  */
 public class TravellingSalesmanMap {
