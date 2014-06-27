@@ -150,5 +150,6 @@ public class Pride {
 	public void setSafeMode(boolean safeModeNewStatus) {
 	}
 	
+	
 }
 

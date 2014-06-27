@@ -413,4 +413,17 @@ Next thing is organizing the house. I am pretty sure there are lots of things
 I can improve in the code and in the documentation (old same story). So I won't write 
 any other to-dos, except this: (Todo 12) Organize everything.
 
+[26/06/2014 - 21h17 - GMT -3]
+TravellingSalesman class is finally well documented. I came up with a different 
+method for crossover, but I don't feel it's the right time to go back to it. Let's
+move forward. There are two big things in my wish list right now. First, I would 
+like to get the code ready to parallel processing (Let's go, Threads!). Checking 
+the program today I realized I might need to review the Core code, specially
+how the solutions are evaluated in each generation. I am not sure if with the way
+it is right now I can get all the power from parallel processing. Ideally, I should
+evaluate each Dna in a single loop. I need to check on this. The other thing I 
+wanted is a better map class, so I could create more complex and real problems.
+I guess it won't hurt if I leave a third item: I need to implement the SafeMode.
+Running the GA on safe mode will guarantee that every single solution obtained
+ is valid.
 

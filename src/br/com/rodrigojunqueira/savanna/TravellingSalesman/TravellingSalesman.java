@@ -285,8 +285,7 @@ public class TravellingSalesman implements Dna {
 			Collections.reverse(reverseRoute);
 			this.route = (String[]) reverseRoute.toArray();
 		}
-		this.evaluate(); // It evaluates itself...
-		this.updateMoves(); // ... and updates the moves list.
+		this.updateMoves(); // Updates the moves list.
 	}
 
 	/**
