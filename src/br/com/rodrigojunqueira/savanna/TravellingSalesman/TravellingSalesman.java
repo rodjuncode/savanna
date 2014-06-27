@@ -72,7 +72,7 @@ public class TravellingSalesman implements Dna {
 		 * it in the later. Right now it tries for a number of times equals to one
 		 * third of the total of cities in the current route.
 		 */
-		int numberOfInteractions = Math.round(this.route.length/3); // one third of cities of the current route
+		int numberOfInteractions = Math.round(this.route.length/4); // one third of cities of the current route
 		for (int i = 0; i < numberOfInteractions; i++) {
 			newTravel = new TravellingSalesman(this.map);
 			// Check if at this point both solutions are the same

@@ -21,6 +21,7 @@ public class Pride {
 	private Lion lionKing;
 	private Lion lionNomad;
 	private Lion lionElder;
+	private int kingIndex;
 	
 	/**
 	 * A new Pride is created, empty and on generation 0.
@@ -104,7 +105,8 @@ public class Pride {
 		
 		for (int i = 0; i < this.lions.length; i++) {
 			if (this.lions[i].compareTo(this.lionKing) == 1) {
-				this.lionKing = this.lions[i];				
+				this.lionKing = this.lions[i];	
+				this.kingIndex = i;
 			} else if (this.lions[i].compareTo(this.lionNomad) == 1) {
 				this.lionNomad = this.lions[i];
 			} else if (this.lions[i].compareTo(this.lionElder) == -1) {
@@ -122,14 +124,14 @@ public class Pride {
 		Lion cub;
 		for (int i = 0; i < this.lions.length; i++) {
 			if (this.lions[i] != this.lionKing) {
-				//if (this.lions[i] == this.lionElder) {
+				//if (this.lions[i].equals(this.lionElder)) {
 				//	this.lions[i] = new Lion(this.dnaFactory.generate());
 				//} else {
 					cub = this.lionKing.mate(this.lions[i]);
 					if (cub.compareTo(this.lions[i]) == 1) {
 						this.lions[i] = cub;
-					}
-				//}
+				//	}
+				}
 			} 
 		}
 		this.rank();
@@ -148,6 +150,10 @@ public class Pride {
 	}
 	
 	public void setSafeMode(boolean safeModeNewStatus) {
+	}
+
+	public void setKing(Lion newKing) {
+		this.lions[this.kingIndex] = newKing;		
 	}
 	
 	
